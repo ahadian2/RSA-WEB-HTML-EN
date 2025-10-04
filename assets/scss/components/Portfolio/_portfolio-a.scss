@@ -1,0 +1,30 @@
+﻿@use "../../custom/_variables" as *;
+
+.portfolio-a {
+    .nav-portfolio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 40px !important;
+        margin-top: 0px !important;
+
+        li {
+            button {
+                font-size: .85rem !important;
+                font-weight: 300;
+                transition: background .3s;
+                margin: 0 1px !important;
+                padding: 7px 10px 8px 10px;
+                background-color: var(--bs-brandcolor-c);
+                min-width: 100px;
+                color: var(--bs-txt-white-fixed);
+
+                &:hover {
+                    background: var(--bs-brandcolor-a);
+                    color: var(--bs-txt-white-fixed);
+                }
+            }
+        }
+    }
+}

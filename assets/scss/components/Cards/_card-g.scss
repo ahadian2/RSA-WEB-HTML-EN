@@ -1,0 +1,111 @@
+﻿@use "../../custom/_variables" as *;
+
+.card-g {
+    .card-g-img {
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .card-g-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .title-rsa {
+            margin: 10px 0 30px 0;
+
+            h3 {
+                margin: 5px;
+            }
+        }
+
+        .accordion-item {
+            border: 0;
+
+            .accordion-button {
+                background-color: var(--bs-brandcolor-a);
+                color: var(--bs-txt-white-fixed);
+                margin-bottom: 10px;
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+                border-radius: 2px !important;
+                position: relative;
+                padding-left: 65px;
+                outline: none;
+                box-shadow: none;
+                border: 0;
+                font-size: 0.78rem;
+                font-weight: 600;
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    border: 0;
+                }
+
+                &:after {
+                    content: "\F282";
+                    display: inline-block;
+                    font-family: bootstrap-icons !important;
+                    font-style: normal;
+                    font-weight: 400 !important;
+                    position: absolute;
+                    right: 15px;
+                    color: var(--bs-txt-white-fixed);
+                    font-size: 0.7rem;
+                    top: 1.43rem;
+                    background-image: none;
+                }
+
+                &:before {
+                    content: "\F26F";
+                    font-family: bootstrap-icons !important;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 50px;
+                    background-color: var(--bs-brandcolor-c);
+                    color: var(--bs-txt-white-fixed);
+                    font-size: 1.3rem;
+                    font-weight: 100;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    line-height: 0;
+                }
+
+                &:not(.collapsed) {
+                    background-color: var(--bs-brandcolor-a);
+                    color: var(--bs-txt-white-fixed);
+
+                    &:after {
+                        color: var(--bs-txt-white-fixed);
+                        top: .93rem;
+                        right: 25px;
+                    }
+
+                    &:before {
+                        color: var(--bs-txt-white-fixed);
+                    }
+                }
+
+                span {
+                    overflow: hidden;
+                    line-height: 26px;
+                    height: 25px;
+                    padding-right: 25px;
+                }
+            }
+
+            .accordion-body {
+                font-size: 0.8rem;
+                color: var(--bs-txt-muted);
+                text-align: justify;
+                line-height: 2rem;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

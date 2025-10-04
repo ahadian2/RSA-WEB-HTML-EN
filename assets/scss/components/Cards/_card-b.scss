@@ -1,0 +1,44 @@
+﻿@use "../../custom/_variables" as *;
+
+.card-b {
+    .card-b-item {
+        a {
+            text-decoration: none;
+            display: block;
+
+            .card-b-icon {
+                background-color: var(--bs-brandcolor-a);
+                height: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    font-size: 2rem;
+                    color: var(--bs-brandcolor-c);
+                    transition: font-size .3s;
+                    line-height: 0;
+                }
+            }
+
+            h3 {
+                margin: 0;
+                font-size: .8rem;
+                text-align: center;
+                padding: 10px 5px;
+                background-color: var(--bs-brandcolor-c);
+                color: var(--bs-brandcolor-a);
+            }
+
+            &:hover {
+                .card-b-icon {
+                    i {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,64 @@
+﻿@use "../../custom/_variables" as *;
+
+.card-c {
+        .card-c-item {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            justify-content: center;
+            align-items: start;
+
+            .card-c-icon {
+                i {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var(--bs-brandcolor-a);
+                    color: var(--bs-txt-white-fixed);
+                    font-size: 1.4rem;
+                    transition: border-radius .5s, background-color .5s;
+                    border-radius: 2px;
+                }
+            }
+
+            .card-c-desc {
+                h3 {
+                    font-size: 0.9rem;
+                    font-weight: 800;
+                    color: var(--bs-txt-base);
+                }
+
+                p {
+                    font-weight: 300;
+                    font-size: .85rem;
+                    text-align: justify;
+                    color: var(--bs-txt-muted);
+                    line-height: 1.6rem;
+                    overflow: hidden;
+                    height: 55px;
+                }
+            }
+
+            &:hover {
+                .card-c-icon {
+                    i {
+                        border-radius: 5px;
+                        background-color: var(--bs-brandcolor-c);
+                    }
+                }
+            }
+        }
+
+        .card-c-img {
+            img {
+                width: 100%;
+                display: block;
+                max-width: 400px;
+                margin: auto;
+            }
+        }
+}
+
+
