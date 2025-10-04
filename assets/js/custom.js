@@ -732,7 +732,7 @@
     // ====== owl hero-a ======
     $(function () {
         $('.owl-hero-a').owlCarousel({
-            rtl: true,
+            rtl: false,
             lazyLoad: true,
             animateOut: 'fadeOut',
             items: 1,
@@ -768,7 +768,7 @@
     });
     // ====== owl-b ======
     $('.owl-b .owl-carousel').owlCarousel({
-        rtl: true,
+        rtl: false,
         lazyLoad: true,
         items: 4,
         loop: true,
@@ -797,7 +797,7 @@
     });
     // ====== card-h owl ======
     $('.card-h .owl-carousel').owlCarousel({
-        rtl: true,
+        rtl: false,
         lazyLoad: true,
         items: 4,
         loop: true,
@@ -826,7 +826,7 @@
     });
     // ====== card-i owl ======
     $('.card-i .owl-carousel').owlCarousel({
-        rtl: true,
+        rtl: false,
         lazyLoad: true,
         items: 6,
         loop: true,
@@ -858,7 +858,7 @@
     });
     // ====== widget owl ======
     $('.widget .owl-carousel').owlCarousel({
-        rtl: true,
+        rtl: false,
         lazyLoad: true,
         items: 1,
         loop: true,
@@ -871,7 +871,7 @@
     });
     // ====== related posts owl ======
     $('.related-posts .owl-carousel').owlCarousel({
-        rtl: true,
+        rtl: false,
         lazyLoad: true,
         items: 3,
         loop: true,
@@ -903,7 +903,7 @@
     });
     // ====== widget owl ======
     $('.product-gallery .owl-carousel').owlCarousel({
-        rtl: true,
+        rtl: false,
         lazyLoad: true,
         items: 1,
         loop: true,
@@ -916,7 +916,7 @@
     });
     // ====== related product ======
     $('.related-product .owl-carousel').owlCarousel({
-        rtl: true,
+        rtl: false,
         lazyLoad: true,
         items: 4,
         loop: true,

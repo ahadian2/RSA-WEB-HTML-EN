@@ -1,7 +1,7 @@
 ﻿.topbar-a .topbar .topbar-social {
     flex-direction: row !important;
 }
-
-    .navbar-top-a .navbar-items .navbar-icon .navbar-sidebar-a__language {
-        top: -2px !important;
-    }
+.navbar-top-a .navbar-items .navbar-top .dropdown-mega a:before {
+position:relative;
+top:2px !important;
+}

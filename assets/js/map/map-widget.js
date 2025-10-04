@@ -29,7 +29,7 @@
         const raw = Array.isArray(opts.data) ? opts.data : [];
         const locations = raw.filter(validPoint);
         if (!locations.length) {
-            $host.text('هیچ نقطه‌ای برای نمایش نقشه ارسال نشده است.');
+            $host.text('No points have been submitted for map display.');
             return;
         }
 
@@ -79,7 +79,7 @@
     function buildSrcDoc({ mode, locations, features, cssHref }) {
         const DATA = JSON.stringify({ mode, locations, features });
         return `<!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -91,16 +91,16 @@ ${cssHref ? `<link rel="stylesheet" href="${escapeHtml(cssHref)}">` : ''}
 <div id="app">
   <div id="toolbar" style="${mode === 'multi' ? '' : 'display:none'}">
     <span id="ctl-province" style="display:${features.filterProvince ? 'inline-flex' : 'none'}; gap:6px; align-items:center;">
-      <label for="filter-province" style="display:none">استان:</label>
-      <select id="filter-province"><option value="">فیلتر بر اساس استان</option></select>
+      <label for="filter-province" style="display:none">Province:</label>
+      <select id="filter-province"><option value="">Filter by province</option></select>
     </span>
     <span id="ctl-city" style="display:${features.filterCity ? 'inline-flex' : 'none'}; gap:6px; align-items:center;">
-      <label for="filter-city">شهر:</label>
+      <label for="filter-city">City:</label>
       <select id="filter-city"><option value="">همه</option></select>
     </span>
     <span id="ctl-search" style="display:${features.searchCompany ? 'inline-flex' : 'none'}; gap:6px; align-items:center;">
       <label for="filter-q">جست‌وجو:</label>
-      <input id="filter-q" type="search" placeholder="نام شرکت / آدرس...">
+      <input id="filter-q" type="search" placeholder="Company name / address...">
     </span>
     <span class="badge" id="count" style="display:none">—</span>
   </div>
@@ -157,7 +157,7 @@ ${cssHref ? `<link rel="stylesheet" href="${escapeHtml(cssHref)}">` : ''}
     if(!value) return "";
     const val = raw ? value : _esc(value);
     return \`
-      <div class="pc-row \${label==='استان'?'is-province':label==='شهر'?'is-city':label==='آدرس'?'is-address':label==='تلفن'?'is-phone':''}">
+      <div class="pc-row \${label==='Province'?'is-province':label==='City'?'is-city':label==='Address'?'is-address':label==='Telephone'?'is-phone':''}">
         <span class="pc-label">\${label}</span>
         <span class="pc-value">\${val}</span>
       </div>\`;
@@ -170,16 +170,16 @@ ${cssHref ? `<link rel="stylesheet" href="${escapeHtml(cssHref)}">` : ''}
       ? phones.map(t=>\`<a href="tel:\${_digits(t)}">\${_esc(t)}</a>\`).join(' <span class="sep">•</span> ')
       : "";
     return \`
-      <div class="popup-card glow" dir="rtl" style="--pc-accent:\${colorForPoint(p)}">
+      <div class="popup-card glow" dir="ltr" style="--pc-accent:\${colorForPoint(p)}">
         <div class="pc-header">
           <div class="pc-badge" aria-hidden="true"></div>
           <div class="pc-title">\${_esc(p.company || "—")}</div>
         </div>
         <div class="pc-body">
-          \${p.province ? _row("استان", p.province) : ""}
-          \${p.city ? _row("شهر", p.city) : ""}
-          \${p.address ? _row("آدرس", p.address) : ""}
-          \${telHtml ? _row("تلفن", telHtml, {raw:true}) : ""}
+          \${p.province ? _row("Province", p.province) : ""}
+          \${p.city ? _row("City", p.city) : ""}
+          \${p.address ? _row("Address", p.address) : ""}
+          \${telHtml ? _row("Telephone", telHtml, {raw:true}) : ""}
         </div>
       </div>\`;
   }
